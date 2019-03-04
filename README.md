@@ -1,7 +1,7 @@
 在线地址： [React App](http://182.254.184.173).
 
 
-## 前端技术库
+## 前端所用技术库
 
 - axios
 - immutable
@@ -17,7 +17,7 @@
 - redux-immutable
 - redux-thunk
 
-## 后端技术库
+## 后端所用技术库
 - nodeJs
 - cheerio
 - koa
