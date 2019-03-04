@@ -1,0 +1,17 @@
+/**
+ * Created by H
+ * User: huangcan
+ * Date: 2018/11/2
+ * Time: 3:38 PM
+ */
+
+import {createStore, compose, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
+import reducer from './reducer'
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(reducer, composeEnhancers(
+    applyMiddleware(thunk)
+))
+
+export default store

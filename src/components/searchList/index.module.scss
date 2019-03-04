@@ -1,0 +1,28 @@
+
+.box {
+  margin-top: 10px;
+}
+
+.result {
+  float: left;
+  margin-right: 10px;
+  font-size: 14px;
+  color: colors('main')
+}
+
+.item {
+  float: left;
+  margin: -3px 10px 8px 0;
+  border: 1px solid rgba(142, 74, 58, 0.3);
+  border-radius: 23px;
+  padding: 0 5px;
+  transition: all .3s;
+
+  &:hover {
+    background: colors('f9f0');
+  }
+  a {
+    font-size: size('14');
+    color: colors('main')
+  }
+}

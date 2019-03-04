@@ -1,0 +1,62 @@
+@keyframes spin-fast {
+
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+  }
+
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+  }
+
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+.loading-wrap {
+  //margin-left: 25%;
+  @include transCenter(absolute,50%,50%);
+
+
+}
+
+.spin {
+  animation: spin-fast 1s infinite;
+  font-size: 3em;
+  width: 1.5em;
+  height: 1.5em;
+  margin-bottom: 5px;
+  position: relative;
+  @include maxScreenWidth(648) {
+    margin: 0 auto 5px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: center center no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: .15em solid transparent;
+    border-color: #ff5c38 #ff5c38 #ff5c38 transparent;
+  }
+}
+
+.txt {
+  font-size: size('18');
+  color: colors('main');
+  margin-left: -10px;
+  @include maxScreenWidth(648) {
+    margin-left: 0;
+  }
+}

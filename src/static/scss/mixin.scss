@@ -1,0 +1,175 @@
+/*媒体查询响应式*/
+@mixin maxScreenWidth($width) {
+  @media screen and (max-width: $width + px) {
+    @content;
+  }
+}
+
+@mixin minScreenWidth($width) {
+  @media screen and (min-width: $width + px) {
+    @content;
+  }
+}
+
+@mixin betweenScreenWidth($min, $max) {
+  @media screen and (min-width: $min + px) and (max-width: $max + px) {
+    @content;
+  }
+}
+
+/*手机端1px像素*/
+@mixin border-top-1px($color) {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid $color;
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+      transform: scaleY(.7);
+      transform-origin: 50% 100%;
+    }
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-device-pixel-ratio: 2) {
+      transform: scaleY(.5);
+      transform-origin: 50% 100%;
+    }
+  }
+}
+
+@mixin border-bottom-1px($color) {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid $color;
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+      transform: scaleY(.7);
+      transform-origin: 50% 100%;
+    }
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-device-pixel-ratio: 2) {
+      transform: scaleY(.5);
+      transform-origin: 50% 100%;
+    }
+  }
+}
+
+@mixin border-right-1px($color) {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border-right: 1px solid $color;
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+      transform: scaleX(.7);
+      transform-origin: 50% 100%;
+    }
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-device-pixel-ratio: 2) {
+      transform: scaleX(.5);
+      transform-origin: 50% 100%;
+    }
+  }
+}
+
+@mixin border-left-1px($color) {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-left: 1px solid $color;
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+      transform: scaleX(.7);
+      transform-origin: 50% 100%;
+    }
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-device-pixel-ratio: 2) {
+      transform: scaleX(.5);
+      transform-origin: 50% 100%;
+    }
+  }
+}
+
+/*css3画三角形上下左右*/
+@mixin triangle-top($border-width, $bgC_color) {
+  width: 0;
+  height: 0;
+  border-left: $border-width solid transparent;
+  border-right: $border-width solid transparent;
+  border-bottom: $border-width solid $bgC_color;
+}
+
+@mixin triangle-bottom($border-width, $bgC_color) {
+  width: 0;
+  height: 0;
+  border-left: $border-width solid transparent;
+  border-right: $border-width solid transparent;
+  border-top: $border-width solid $bgC_color;
+}
+
+@mixin triangle-left($border-width, $bgC_color) {
+  width: 0;
+  height: 0;
+  border-left: $border-width solid $bgC_color;
+  border-right: $border-width solid transparent;
+  border-bottom: $border-width solid transparent;
+  transform: rotate(-45deg);
+}
+
+@mixin triangle-right($border-width, $bgC_color) {
+  width: 0;
+  height: 0;
+  border-left: $border-width solid transparent;
+  border-right: $border-width solid $bgC_color;
+  border-bottom: $border-width solid transparent;
+  transform: rotate(45deg);
+}
+
+/*css3 transfrom居中*/
+@mixin transCenter($property, $top, $left) {
+  position: $property;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absoluteCenter() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/*背景图*/
+@mixin bg-image($url, $property) {
+  background: url($url) no-repeat;
+  background-size: $property;
+}
+
+/*背景遮罩*/
+@mixin bg-blur($url) {
+  background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url($url);
+}
+
+/*手机端扩展点击区域*/
+@mixin extend-click() {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+}

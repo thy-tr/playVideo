@@ -1,0 +1,38 @@
+@import "./mixin";
+//@import "./common";
+//@import "./reset";
+
+$global-color: (
+  'main': #8e4a3a,
+  'sub': #61dafb,
+  'f9f0': #F9F0DA,
+  '000': #000,
+  'fff': #fff
+);
+
+$global-size: (
+  '13': 12px,
+  '14': 14px,
+  '16': 16px,
+  '18': 18px,
+  '20': 20px
+);
+
+@function colors($color) {
+  @if not map-has-key($global-color,$color) {
+    @warn "No color found for `#{$color}` in $$global-color map. Property omitted.";
+  }
+  @return map-get($global-color, $color);
+}
+
+@function size($size) {
+  @if not map-has-key($global-size,$size) {
+    @warn "No color found for `#{$size}` in $$global-size map. Property omitted.";
+  }
+  @return map-get($global-size, $size);
+}
+
+
+
+
+

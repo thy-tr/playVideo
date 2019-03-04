@@ -1,0 +1,43 @@
+
+.container-wrapper {
+  width: 700px;
+  margin: 0 auto;
+  @include maxScreenWidth(648) {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: ".";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+
+.ellipses {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.m_ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+
+.img-scale {
+  img {
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+}
+
+
+

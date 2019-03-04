@@ -1,0 +1,21 @@
+.react-logo {
+  width: 200px;
+  height: 200px;
+  @include absoluteCenter();
+  position: fixed;
+  left: -10px;
+  top: -200px;
+}
+
+.rotate {
+  animation: rotate infinite 20s linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
