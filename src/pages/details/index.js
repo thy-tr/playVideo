@@ -48,6 +48,9 @@ class Details extends PureComponent {
 
   constructor() {
     super()
+    this.state = {
+      loading: 1
+    }
     this.myRef = ''
     this.handleClick = this.handleClick.bind(this)
     this.handlePopState = this.handlePopState.bind(this)
@@ -102,7 +105,17 @@ class Details extends PureComponent {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.pathname !== this.props.location.pathname) {
-      this.compareData(nextProps)
+      this.setState({
+        loading: 1
+      }, () => {
+        this.compareData(nextProps)
+      })
+    }
+  }
+
+  componentDidUpdate(nextProps) {
+    if (nextProps.content.length !== this.props.content.length) {
+      this.setState({loading: 0})
     }
   }
 
@@ -160,7 +173,7 @@ class Details extends PureComponent {
                                     <span className={style['year']}>年份：</span>
                                     <span>{data['year']}</span>
                                   </li>
-                                  <li className={'m_ellipsis'} style={{'height': '70px'}}>
+                                  <li className={'m_ellipsis'}>
                                     <span>{data['intro']}</span>
                                   </li>
                                 </ul>
@@ -206,11 +219,11 @@ class Details extends PureComponent {
                           </div>
                       )
                   ))
-              || <div style={{'text-align': 'center', color: '#8e4a3a'}}> {content}</div>
+              || <div style={{textAlign: 'center', color: '#8e4a3a'}}> {content}</div>
 
             }
             <Video props={this.props}/>
-            <Loading props={content}></Loading>
+            <Loading props={this.state.loading}></Loading>
           </div>
         </Fragment>
     )

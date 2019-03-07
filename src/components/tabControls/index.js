@@ -26,7 +26,6 @@ class TabControls extends PureComponent {
 
   render() {
     const style = this.props.props
-    console.log(style)
     return (
         <Fragment>
 

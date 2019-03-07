@@ -93,6 +93,15 @@ const details = async (ctx, next) => {
           })
         })
 
+        if (source.link.length === 0){
+          source.tab.push('暂无')
+          source.link.push({
+            'source': '暂无',
+            's_url': ``,
+            'num': '暂无资源！尝试使用链接进行视频解析。'
+          })
+        }
+
         source.link.reverse()
 
         obj.data.push(source)
@@ -104,6 +113,7 @@ const details = async (ctx, next) => {
     obj.status = "0"
 
   }
+
   if (obj.data.length === 0) {
 
     obj.data = '暂无资源！尝试使用链接进行视频解析。'

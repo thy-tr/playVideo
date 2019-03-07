@@ -14,7 +14,7 @@ const Video = (props) => {
   const {video, changeShow} = props.props
   return (
       <div className={video.display ? `${style['video-box']} ${style['show']} ` : style['video-box']}>
-        < iframe allowfullscreen title="video" className={style['video']} src={video.url}></iframe>
+        < iframe allowFullScreen title="video" className={style['video']} src={video.url}></iframe>
         <span className={style['close']} onClick={() => {
           changeShow(false, '')
         }}></span>

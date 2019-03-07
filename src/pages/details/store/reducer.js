@@ -9,7 +9,7 @@ import * as types from './actionTypes'
 
 
 const defaultState = fromJS({
-  content: '',
+  content: [],
   video: {
     display: false,
     url: ''

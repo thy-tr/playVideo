@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => ({
 class SearchInput extends PureComponent {
 
   componentWillUnmount() {
-    this.props.changeKeyWord('')
+   this.props.changeKeyWord('')
   }
 
   render() {
@@ -60,7 +60,7 @@ class SearchInput extends PureComponent {
           <DebounceInput
               placeholder={'请输入剧名或链接'}
               className={style.input}
-              debounceTimeout={500}
+              debounceTimeout={800}
               onChange={(e) => {
                 changeKeyWordList(searchResultList, e)
               }}

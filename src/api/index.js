@@ -18,7 +18,7 @@ axios.interceptors.request.use(
     }
 )
 
-const url = 'http://182.254.184.173:3000'
+const url = 'http://localhost:3000'
 
 export default {
   async checkKey() {

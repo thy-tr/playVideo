@@ -10,7 +10,7 @@ import style from './index.module.scss'
 
 const Loading = (props) => {
   return (
-      <div className={style['loading-wrap']} style={{display: props.props ? "none" : "block"}}>
+      <div className={style['loading-wrap']} style={{display: props.props ? "block" : "none"}}>
         <div className={style["spin"]}></div>
         <span className={style["txt"]}>完命加载中~</span>
       </div>
